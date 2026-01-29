@@ -1,0 +1,92 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(to bottom, #ffe6f0, #ffb3d1);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Message Card */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 450px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 2;
+  position: relative;
+}
+
+.card h1 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+#yes-btn {
+  background: #ff4da6;
+  color: white;
+}
+
+#no-btn {
+  background: #aaa;
+  color: white;
+}
+
+/* Falling roses */
+#rose-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rose {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('rose.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
